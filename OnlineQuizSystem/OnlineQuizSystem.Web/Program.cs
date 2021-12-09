@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using OnlineQuizSystem.Web.Data;
+using OnlineQuizSystem.Web.Infrastructure.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,7 +14,10 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
     .AddEntityFrameworkStores<QuizSystemDbContext>();
 builder.Services.AddControllersWithViews();
 
+
 var app = builder.Build();
+
+app.PrepareDatabase();
 
 if (app.Environment.IsDevelopment())
 {
