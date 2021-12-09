@@ -1,0 +1,13 @@
+﻿@model QuizFormModel
+
+<form method="post">
+  <h2 class="heading-margin text-center">@ViewBag.Title</h2>
+
+  <div class="form-group">
+    <label asp-for=Name>Quiz Title</label>
+    <input asp-for=Name class="form-control"  placeholder="Enter email">
+    <span class="small text-danger" asp-validation-for=Name> </span>
+  </div>
+
+  < type="submit" class="btn btn-primary" value="Next"/>
+</form>

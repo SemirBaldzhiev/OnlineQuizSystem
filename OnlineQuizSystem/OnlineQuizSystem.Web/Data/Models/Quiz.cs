@@ -15,10 +15,6 @@
         [Required]
         [MaxLength(200)]
         public string Name { get; set; }
-
-        [Required]
-        public int Score { get; set; }
-
         public virtual ICollection<Question> Questions { get; set; }
     }
 }
